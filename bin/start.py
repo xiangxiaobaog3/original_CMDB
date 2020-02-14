@@ -9,5 +9,9 @@ from src.plugins import PluginsManager
 
 if __name__ == '__main__':
 
-    res = PluginsManager().execute()
-    print(res)
+    host_list = ['10.10.0.100', '10.10.0.101']
+
+    for host in host_list:
+
+        res = PluginsManager(host).execute()
+        print(res)
