@@ -1,6 +1,7 @@
 
+from src.engine.base import BaseHandler
 
-class SSHHandler():
+class SSHHandler(BaseHandler):
 
     def handler(self):
         """

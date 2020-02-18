@@ -1,6 +1,7 @@
 
+from src.engine.base import BaseHandler
 
-class SaltHandler():
+class SaltHandler(BaseHandler):
 
     def handler(self):
         """

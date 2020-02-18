@@ -1,6 +1,7 @@
 
+from src.engine.base import BaseHandler
 
-class AgentHandler():
+class AgentHandler(BaseHandler):
 
     def handler(self):
         """
