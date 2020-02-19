@@ -5,7 +5,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from lib.config.settings import settings
-import importlib
+from lib.util.import_str import get_class
 
 
 def run():
@@ -32,12 +32,8 @@ def run():
     #     raise Exception('当前支持的模式只有：agent/ssh/salt模式')
 
     engine_path = settings.ENGINE_DICT.get(settings.ENGINE)
-    module_name, class_name = engine_path.rsplit('.', 1)
-    # 将一个包以字符串的形式导入 获取模块
-    module = importlib.import_module(module_name)
-    # 反射获取到类
-    cls = getattr(module, class_name)
+
+    cls = get_class(engine_path)
     # 实例化对象 执行handler()
     obj = cls()
     obj.handler()
-run()
