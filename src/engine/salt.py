@@ -1,13 +1,19 @@
-
+# -*- coding:utf-8 -*-
+from lib.config.settings import settings
 from src.engine.base import BaseHandler
+import salt
+from src.plugins import PluginsManager
 
 class SaltHandler(BaseHandler):
 
+    def cmd(self, command, hostname):
+        import salt.client
+        local = salt.client.LocalClient()
+        res = local.cmd(hostname, 'cmd.run', [command])
+        return res[hostname]
+
     def handler(self):
         """
-        import subprocess
-        res = subprocess.getoutput("salt '%s' cmd.run '%s'" % (self.hostname, cmd))
-        return res
         :return:
         """
         print('salt')
