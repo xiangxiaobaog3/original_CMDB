@@ -5,6 +5,10 @@ from src.plugins import get_server_info
 
 class SSHHandler(BaseHandler):
 
+    """
+    同样的执行命令，但执行方式不一样
+    """
+
     def cmd(self, command, hostname):
         import paramiko
         # 创建SSH对象

@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
 
-from src.plugins import PluginsManager
+
 from src.engine.base import BaseHandler
+# from src.plugins import get_server_info
 
 class AgentHandler(BaseHandler):
 
@@ -13,9 +14,7 @@ class AgentHandler(BaseHandler):
     def handler(self):
         """
         :return:
-        """
         from src.plugins.disk import get_disk
-        print('agent')
+        """
 
-        ret = PluginsManager()
-        print(ret)
+        print('agent')

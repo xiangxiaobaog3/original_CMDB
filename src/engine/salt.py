@@ -2,7 +2,8 @@
 from lib.config.settings import settings
 from src.engine.base import BaseHandler
 import salt
-from src.plugins import PluginsManager
+# from src.plugins import PluginsManager
+from src.plugins import get_server_info
 
 class SaltHandler(BaseHandler):
 
