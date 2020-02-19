@@ -5,9 +5,14 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.plugins.Base import Base
+# from src.plugins.Base import Base
+#
+class Disk():
 
-class Disk(Base):
+    def process(self, handler, hostname=None):
+        ret = handler.cmd('df -h', hostname)
+        return ret
 
-    def process(self):
-        self.exec_command('df -h')
+# def get_disk(handler, hostname=None):
+#     ret = handler.cmd('df -h', hostname)
+#     print(ret)
